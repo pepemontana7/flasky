@@ -1,3 +1,4 @@
+from flask_pagedown.fields import PageDownField
 from flask_wtf import Form
 from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
     SubmitField
@@ -6,7 +7,7 @@ from wtforms import ValidationError
 from ..models import Role, User
 
 class PostForm(Form):
-    body = TextAreaField("Whats on your mind?", validators=[Required()])
+    body = PageDownField("Whats on your mind?", validators=[Required()])
     submit = SubmitField('Submit')
 
 class NameForm(Form):
