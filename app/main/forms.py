@@ -6,6 +6,10 @@ from wtforms.validators import Required, Length, Email, Regexp
 from wtforms import ValidationError
 from ..models import Role, User
 
+class CommentForm(Form):
+    body = StringField('', validators=[Required()])
+    submit = SubmitField('Submit')
+
 class PostForm(Form):
     body = PageDownField("Whats on your mind?", validators=[Required()])
     submit = SubmitField('Submit')

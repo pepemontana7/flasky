@@ -47,9 +47,9 @@ def confirm(token):
     if current_user.confirmed:
         return redirect(url_for('main.index'))
     if current_user.confirm(token):
-        flash('You have configrmd your avvoutn. Thnanks!')
+        flash('You have confirmed your account. Thnanks!')
     else:
-        flask('the confirmation link is invalid or has expired.')
+        flask('The confirmation link is invalid or has expired.')
     return redirect(url_for('main.index'))
 
 @auth.before_app_request
